@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #recipe-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recipe {
+            background: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Recipe Tracker</h1>
+    <form id="recipe-form">
+        <input type="text" id="recipe-name" placeholder="Enter recipe name" required>
+        <button type="submit">Add Recipe</button>
+    </form>
+    <ul id="recipe-list"></ul>
+
+    <script>
+        const form = document.getElementById('recipe-form');
+        const recipeList = document.getElementById('recipe-list');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent form submission
+
+            const recipeNameInput = document.getElementById('recipe-name');
+            const recipeName = recipeNameInput.value.trim();
+
+            if (recipeName) {
+                // Create new recipe list item
+                const listItem = document.createElement('li');
+                listItem.className = 'recipe';
+                listItem.textContent = recipeName;
+
+                // Add to list
+                recipeList.appendChild(listItem);
+
+                // Clear input field
+                recipeNameInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
