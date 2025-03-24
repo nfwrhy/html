@@ -4,9 +4,9 @@ img {
 }
 
 .image-container {
-    width: 60%;
-    height: 60%;
-    padding-bottom: 20%;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100%;
     background-image: url('images/cheese-6600573.png');
     background-size: cover;
     background-position: center;
