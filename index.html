@@ -16,6 +16,20 @@
             text-align: center;
             color: #444444;
         }
+        nav {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-bottom: 1px solid #cccccc;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
         #searchQuery {
             width: 80%;
             padding: 10px;
@@ -59,6 +73,13 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#">홈</a>
+        <a href="#">인기</a>
+        <a href="#">최신</a>
+        <a href="#">카테고리</a>
+        <a href="#">내 채널</a>
+    </nav>
     <h1>유튜브 영상 검색</h1>
     <input type="text" id="searchQuery" placeholder="검색어를 입력하세요" />
     <button onclick="searchYouTube()">검색</button>
