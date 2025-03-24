@@ -26,11 +26,21 @@
                 const videoTitle = item.snippet.title;
                 const videoId = item.id.videoId;
                 const videoLink = `https://www.youtube.com/watch?v=${videoId}`;
+                const thumbnailUrl = item.snippet.thumbnails.default.url;
 
                 const link = document.createElement("a");
                 link.href = videoLink;
-                link.textContent = videoTitle;
                 link.target = "_blank";
+
+                const thumbnail = document.createElement("img");
+                thumbnail.src = thumbnailUrl;
+                thumbnail.alt = videoTitle;
+
+                const title = document.createElement("p");
+                title.textContent = videoTitle;
+
+                link.appendChild(thumbnail);
+                link.appendChild(title);
                 resultsDiv.appendChild(link);
                 resultsDiv.appendChild(document.createElement("br"));
             });
